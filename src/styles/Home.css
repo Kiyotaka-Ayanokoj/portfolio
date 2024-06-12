@@ -10,16 +10,14 @@
 .section--welcome {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
 }
 
 .section--welcome .content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  height: 75vh;
   padding: 2rem 1.5rem;
   position: relative;
   z-index: 1;
@@ -28,62 +26,49 @@
 .section--welcome .content .fullName {
   font-size: 2.5rem;
   font-weight: bold;
-  color: white;
+  color: var(--textColor);
 }
 
 .section--welcome .content .profession {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: bold;
   display: block;
-  margin-top: 0.8rem;
-  color: silver;
+  color: rgba(223, 235, 249, 0.9);
+}
+
+.section--welcome .content .description {
+  display: block;
+  font-size: 1.1rem;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  font-weight: lighter;
+  color: rgba(223, 235, 249, 0.9);
 }
 
 .section--welcome .socialNetworks {
-  margin-top: 2.5rem;
   display: flex;
   flex-direction: row;
   gap: 3rem;
 }
 
 .section--welcome .socialNetworks svg {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 28px;
   cursor: pointer;
 }
 
 .section--welcome .socialNetworks svg path {
   transition: 0.3s;
+  fill: var(--textColor);
 }
 
 .section--welcome .socialNetworks svg:hover path {
   fill: #fff;
 }
 
-.section--welcome .getInTouchCont {
-  display: flex;
-  margin-top: 2.5rem;
-}
 
-.section--welcome .getInTouch {
-  background: none;
-  border: 1px solid var(--secondColor);
-  color: var(--secondColor);
-  width: 13rem;
-  background: #ffffff05;
-  backdrop-filter: blur(20px);
-  border-radius: 2px;
-  font-size: 1rem;
-  text-align: center;
-  padding: 1.3rem;
-  transition: 0.2s;
-}
-
-.section--welcome .getInTouch:hover {
-  background: var(--secondColor);
-  box-shadow: 0 0 10px var(--secondColor);
-  color: black;
-}
 
 .section--about {
   display: flex;
@@ -100,30 +85,14 @@
 
 .section--about .description {
   color: rgba(214, 243, 250, 0.597);
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 23px;
   display: block;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
-.section--about .seeResume {
-  background: none;
-  border: 1px dotted var(--secondColor);
-  color: var(--secondColor);
-  width: 13rem;
-  margin-top: 1.3rem;
-  background: #ffffff05;
-  border-radius: 5px;
-  font-size: 1rem;
-  text-align: center;
-  padding: 1.3rem;
-  transition: 0.2s;
-}
-
-.section--about .seeResume:hover {
-  background: var(--secondColor);
-  box-shadow: 0 0 10px var(--secondColor);
-  color: black;
+.section--about .seeResumeCont {
+  margin-top: 2rem;
 }
 
 .section--skills {
@@ -152,7 +121,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  top: -7px;
+  top: -5px;
   width: 35px;
   height: 35px;
   margin-right: 0.5rem;
@@ -161,7 +130,7 @@
 
 .section--skills .categoryIcon span {
   position: relative;
-  top: 15%;
+  top: 1px;
 }
 
 .section--skills .skillsContent {
@@ -180,12 +149,36 @@
   justify-content: center;
   width: 120px;
   row-gap: 0.5rem;
-  background: rgba(160, 154, 255, 0.153);
+  background: rgba(160, 154, 255, 0.15);
   padding: 1rem;
   border-radius: 15px;
+  transition: 0.1s;
+}
+
+.section--skills .skillsContent .skill:hover {
+  background: rgba(160, 154, 255, 0.3);
 }
 
 .section--skills .skillsContent .skill .name {
   font-size: 1rem;
   color: var(--secondColor);
+}
+
+.section--projects {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.section--projects .title {
+  color: var(--secondColor);
+  font-size: 1.8rem;
+}
+
+.section--projects .projects {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
 }

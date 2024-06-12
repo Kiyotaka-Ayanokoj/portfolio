@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Skill = ({ icon, color, name="xd", width="2rem", height="2.5rem" }) => {
+const Skill = ({ icon, color, name="", width="2rem", height="2.5rem" }) => {
     return (
         <div 
             className="skill"

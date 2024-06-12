@@ -7,22 +7,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    --mainColor: rgb(22, 51, 180);
-    --secondColor: rgb(255, 255, 255);
-    --thirdColor: #d4d4d4;
+    --mainColor: #334155;
+    --secondColor: rgb(223, 235, 249);
+    --textColor: rgb(223, 235, 249);
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
 }
   
 body {
     color: rgb(255, 255, 255);
-    background: rgb(148, 147, 147);
+    background: linear-gradient(to right, #0f172a, #334155);
     background-size: cover;
-    /* background-repeat: no-repeat; */
     background-attachment: fixed;
     font-family: "CalibreMedium", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
-  
-button {
-    cursor: pointer;
 }

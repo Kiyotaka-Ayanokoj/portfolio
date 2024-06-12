@@ -6,25 +6,25 @@ import Config from "../Config";
 import Navbar from "../components/Navbar";
 import Reveal from "../components/Reveal";
 import Button from "../components/Button";
-import Bg from "../components/Bg";
+import ProjectCard from "../components/ProjectCard";
 import BackToTopButton from "../components/backToTopButton";
 import Skill from "../components/Skill";
 import { forward } from "../utils/Functions";
 
-import langBox from "../locales/langBox";
+import { getLangBox } from "../locales/langBox";
 
 const Home = () => {
+
+  const [langBox, setLangBox] = useState(getLangBox());
+
   useEffect(() => {
-    document.title = Config.title + "Home";
-  }, []);
+    document.title = Config.pName
+  }, [])
 
   return (
     <>
       <Navbar />
       <BackToTopButton />
-      {/* <StarBackground/> */}
-      {/* <MouseHover/> */}
-      <Bg />
 
       <div className="Home">
         <section className="section--welcome container">
@@ -40,10 +40,7 @@ const Home = () => {
             <Reveal delay="0.70">
               <span
                 className="description"
-                dangerouslySetInnerHTML={{
-                  __html: langBox.home.welcome.description,
-                }}
-              ></span>
+              >{langBox.home.welcome.description}</span>
             </Reveal>
             <div className="socialNetworks">
               <Reveal delay="0.80">
@@ -107,16 +104,14 @@ const Home = () => {
           <Reveal>
             <h1 className="title">{langBox.home.about.title}</h1>
           </Reveal>
-          <Reveal>
+          <Reveal delay="0.3">
             <span className="description">
               {langBox.home.about.description}
             </span>
           </Reveal>
           <div className="seeResumeCont">
-            <Reveal delay="1">
-              <button className="seeResume">
-                {langBox.home.about.seeResume}
-              </button>
+            <Reveal delay="0.4">
+                <Button text={langBox.home.about.seeResume}></Button>
             </Reveal>
           </div>
         </section>
@@ -170,6 +165,18 @@ const Home = () => {
             );
           })}
         </section>
+
+        <section className="section--projects">
+          <Reveal>
+            <h1 className="title">{langBox.home.projects.title}</h1>
+          </Reveal>
+          <div className="projects">
+            <Reveal>
+              <ProjectCard projects={Config["projects"]}/>
+            </Reveal>
+          </div>
+        </section>
+
       </div>
     </>
   );

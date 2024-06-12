@@ -1,150 +1,48 @@
 .Button {
-    position: relative;
-    padding: 0.8rem 2.5rem;
-    background: var(--mainColor);
-    font-size: 17px;
-    font-weight: 500;
-    color: white;
-    border: 3px solid var(--mainColor);
-    border-radius: 8px;
-    box-shadow: 0 0 0 var(--mainColor);
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
-  }
-  
-  .star-1 {
-    position: absolute;
-    top: 20%;
-    left: 20%;
-    width: 25px;
-    height: auto;
-    filter: drop-shadow(0 0 0 #fffdef);
-    z-index: -5;
-    transition: all 1s cubic-bezier(0.05, 0.83, 0.43, 0.96);
-  }
-  
-  .star-2 {
-    position: absolute;
-    top: 45%;
-    left: 45%;
-    width: 15px;
-    height: auto;
-    filter: drop-shadow(0 0 0 #fffdef);
-    z-index: -5;
-    transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
-  }
-  
-  .star-3 {
-    position: absolute;
-    top: 40%;
-    left: 40%;
-    width: 5px;
-    height: auto;
-    filter: drop-shadow(0 0 0 #fffdef);
-    z-index: -5;
-    transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
-  }
-  
-  .star-4 {
-    position: absolute;
-    top: 20%;
-    left: 40%;
-    width: 8px;
-    height: auto;
-    filter: drop-shadow(0 0 0 #fffdef);
-    z-index: -5;
-    transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
-  }
-  
-  .star-5 {
-    position: absolute;
-    top: 25%;
-    left: 45%;
-    width: 15px;
-    height: auto;
-    filter: drop-shadow(0 0 0 #fffdef);
-    z-index: -5;
-    transition: all 0.6s cubic-bezier(0, 0.4, 0, 1.01);
-  }
-  
-  .star-6 {
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    width: 5px;
-    height: auto;
-    filter: drop-shadow(0 0 0 #fffdef);
-    z-index: -5;
-    transition: all 0.8s ease;
-  }
-  
-  .Button:hover {
-    background: transparent;
-    color: var(--mainColor);
-    box-shadow: 0 0 25px var(--mainColor);
-  }
-  
-  .Button:hover .star-1 {
-    position: absolute;
-    top: -80%;
-    left: -30%;
-    width: 25px;
-    height: auto;
-    filter: drop-shadow(0 0 10px #fffdef);
-    z-index: 2;
-  }
-  
-  .Button:hover .star-2 {
-    position: absolute;
-    top: -25%;
-    left: 10%;
-    width: 15px;
-    height: auto;
-    filter: drop-shadow(0 0 10px #fffdef);
-    z-index: 2;
-  }
-  
-  .Button:hover .star-3 {
-    position: absolute;
-    top: 55%;
-    left: 25%;
-    width: 5px;
-    height: auto;
-    filter: drop-shadow(0 0 10px #fffdef);
-    z-index: 2;
-  }
-  
-  .Button:hover .star-4 {
-    position: absolute;
-    top: 30%;
-    left: 80%;
-    width: 8px;
-    height: auto;
-    filter: drop-shadow(0 0 10px #fffdef);
-    z-index: 2;
-  }
-  
-  .Button:hover .star-5 {
-    position: absolute;
-    top: 25%;
-    left: 115%;
-    width: 15px;
-    height: auto;
-    filter: drop-shadow(0 0 10px #fffdef);
-    z-index: 2;
-  }
-  
-  .Button:hover .star-6 {
-    position: absolute;
-    top: 5%;
-    left: 60%;
-    width: 5px;
-    height: auto;
-    filter: drop-shadow(0 0 10px #fffdef);
-    z-index: 2;
-  }
-  
-  .fil0 {
-    fill: #fffdef;
-  }
-  
+  --boxShadowColor: white;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 1px var(--boxShadowColor);
+  padding: 1.4rem 2.5rem;
+  border-radius: 5px;
+  display: inline-flex;
+  flex-direction: row;
+  transition: 0.3s;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.Button::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  transform: translateX(-100px);
+  width: 10px;
+  height: 100px;
+  filter: blur(10px);
+  z-index: -1;
+  background: linear-gradient(transparent, white, transparent);
+  transition: 0.3s;
+}
+
+.Button .text {
+  font-weight: 600;
+  display: flex;
+}
+
+.Button .text .link-icon {
+  width: 20px;
+  height: 20px;
+  margin-left: .5rem;
+  fill: rgba(255, 255, 255, 0.4);
+}
+
+.Button:hover, .Button:active {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0px 3px var(--boxShadowColor);
+}
+
+.Button:hover::before {
+  transform: translateX(250px)
+}
